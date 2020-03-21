@@ -1,4 +1,4 @@
-class Artist
+/*class Artist
 {
   private: 
 
@@ -22,7 +22,7 @@ bool Artist:: ThereYet
 
 void Artist::DrawLine(Point start, Point finish)
 {
-  UseRuler(start, finish);
+ // UseRuler(start, finish);
   while(!ThereYet)
   {
     MovePencil();
@@ -39,7 +39,7 @@ void Artist::DrawCircle(Point start, Point finish, bool clockwise, )
   }
 }
 
-void UseRuler(Point start, Point finish)
+/*void UseRuler(Point start, Point finish)
 {
   // HELP set speed of motors according to dimensions of a triangle...
 }
@@ -77,4 +77,4 @@ void Artist::MovePencil()
     }
     }
 
-}
+}*/

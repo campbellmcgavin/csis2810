@@ -2,8 +2,8 @@ class Point
 {
   private:
 
-  int pointX
-  int pointY
+  int pointX;
+  int pointY;
   
   public:
   Point(int pointX, int pointY);
