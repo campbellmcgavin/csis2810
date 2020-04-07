@@ -1,26 +1,10 @@
-/*class Artist
-{
-  private: 
-
-  public:
-  Artist();
-  void MovePencil();
-  void UseRuler();
-  void UseCompass();
-  void DrawCircle();
-  void DrawLine();
-  bool ThereYet();
-  
-  
-};
-
-bool Artist:: ThereYet
+bool ThereYet()
 {
   if(x_move_finished && y_move_finished) return true;
   return false;
 }
 
-void Artist::DrawLine(Point start, Point finish)
+void DrawLine(Point start, Point finish)
 {
  // UseRuler(start, finish);
   while(!ThereYet)
@@ -29,17 +13,16 @@ void Artist::DrawLine(Point start, Point finish)
   }
 }
 
-void Artist::DrawCircle(Point start, Point finish, bool clockwise, )
+void DrawCircle(Point start, Point finish, bool clockwise )
 {
 
   while(!ThereYet)
   {
-    //UseCompass(start, finish);
     //MovePencil();
   }
 }
 
-/*void UseRuler(Point start, Point finish)
+void UseRuler(Point start, Point finish)
 {
   // HELP set speed of motors according to dimensions of a triangle...
 }
@@ -51,7 +34,7 @@ void UseCompass(Point radius, Point xxx)
 
 
 
-void Artist::MovePencil()
+void MovePencil()
 {
 
     if (x_travel >= 0 && x_travel <= bedSize) {
@@ -77,4 +60,4 @@ void Artist::MovePencil()
     }
     }
 
-}*/
+}

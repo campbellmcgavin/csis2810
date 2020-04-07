@@ -1,21 +1,11 @@
-class Scribe
-{
-  String scribeString;
-  Point scribePoint;
-  //Style scribeStyle;
+#include "Arduino.h"
+#include "Scribe.h"
+#include "Point.h"
 
-  public:
-  Scribe();
-  String requestString();
-  Point requestPoint();
-};
 
 
 Scribe::Scribe()
 {
-  this -> scribeString = scribeString;
-  this -> scribePoint = scribePoint;
-  //this -> scribeStyle = scribeStyle;
 }
 
 String Scribe::requestString()
