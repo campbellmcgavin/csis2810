@@ -48,6 +48,7 @@ void DrawLine(Point start, Point finish)
 }
 */
 
+
 //~~~~~~~~~~~~~~~~ CALCULATE FUNCTIONS ~~~~~~~~~~~~~~//
 
 void calculateLine(Point start, Point finish)
