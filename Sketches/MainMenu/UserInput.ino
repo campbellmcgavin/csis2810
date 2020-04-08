@@ -52,8 +52,7 @@ void MainMenu()
   Serial.println(command);
   if(command == 's')
   {
-    String userInput = requestString();
-    
+    String userInput = requestString(); 
   }
   if(command == 'p') 
   {

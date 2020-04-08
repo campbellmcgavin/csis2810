@@ -33,6 +33,7 @@ double maxaccel = 1000.0;
 void setup() {
   Serial.begin(9600);  // Start the Serial monitor with speed of 9600 Bauds
   pinMode(x_switch, INPUT_PULLUP);
+  pinMode(y_switch, INPUT_PULLUP);
   goHome();
 }
 

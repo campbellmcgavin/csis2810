@@ -78,7 +78,7 @@ void calculateCircle(Point radius, Point xxx)
 //~~~~~~~~~~~~~~~~~ MOVE FUNCTIONS ~~~~~~~~~~~~~~~~~~//
 void MoveMotors()
 {
-     printHowFarLeft();
+     //printHowFarLeft();
      
      // Check if the Stepper has reached desired position
      if (!xThereYet()) {
