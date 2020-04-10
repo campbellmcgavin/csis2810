@@ -23,22 +23,70 @@ Point requestPoint()
   { 
     Serial.read();
   }
-  Serial.print("Enter an x coordinate: ");
-  while (Serial.available()==0); // do nothing until you receive input.
-  while (Serial.available()>0)  { // Check if values are available in the Serial Buffer
-  x = Serial.parseInt();
-  Serial.println(x);
+    Serial.print("Enter an x coordinate: ");
+    while (Serial.available()==0); // do nothing until you receive input.
+    while (Serial.available()>0)  { // Check if values are available in the Serial Buffer
+    x = Serial.parseInt();
+    Serial.println(x);
   }
 
-  Serial.print("Enter a  y coordinate: ");
-  while (Serial.available()==0); // do nothing until you receive input.
-  while (Serial.available()>0)  { // Check if values are available in the Serial Buffer
-  y = Serial.parseInt();
-  Serial.println(y);
+    Serial.print("Enter a  y coordinate: ");
+    while (Serial.available()==0); // do nothing until you receive input.
+    while (Serial.available()>0)  { // Check if values are available in the Serial Buffer
+    y = Serial.parseInt();
+    Serial.println(y);
   }
   Point point(x,y);
   return point;  // return variable
 }
+ReadString(String userInput)(
+// #input string
+ //# loop through letters function
+
+  
+  for(int i = 0, i < userInput.length, i++)
+  {
+    switch userInput.charAt[i]:
+      case 'A':
+        
+      break;   
+      case 'B':break;
+      
+      case 'C':break;
+      case 'D':break;
+      case 'E':break;
+      case 'F':break;
+      case 'G':break;
+      case 'H':break;
+      case 'I':break;
+      case 'J':break;
+      case 'K':break;
+      case 'L':break;
+      case 'M':break;
+      case 'N':break;
+      case 'O':break;
+      case 'P':break;
+      case 'Q':break;
+      case 'R':break;
+      case 'S':break;
+      case 'T':break;
+      case 'U':break;
+      case 'V':break;
+      case 'W':break;
+      case 'X':break;
+      case 'Y':break;
+      case 'Z':
+      
+      break;
+      default:
+        //ERROR
+      return finish
+   }
+{
+
+ DrawLetter(UserInput(i)
+}
+
 
 void MainMenu()
 {
@@ -53,10 +101,13 @@ void MainMenu()
   if(command == 's')
   {
     String userInput = requestString(); 
+    ReadString(userInput);
   }
   if(command == 'p') 
   {
-    Point point = requestPoint();
+    Point p_start(x_stepper.currentPosition(), y_stepper.currentPosition());
+    Point p_end = requestPoint();
+    DrawLine(p_start, p_end);
   }
   if(command == 'h') 
   {

@@ -35,13 +35,13 @@ void goHome()
   }
    
   x_stepper.setCurrentPosition(0);  // Set the current position as zero for now
-  x_stepper.setMaxSpeed(maxspeed);      // Set Max Speed of Stepper (Slower to get better accuracy)
-  x_stepper.setAcceleration(maxaccel);  // Set Acceleration of Stepper
+  x_stepper.setMaxSpeed(maxSpeed);      // Set Max Speed of Stepper (Slower to get better accuracy)
+  x_stepper.setAcceleration(maxAccel);  // Set Acceleration of Stepper
   x_initial_homing = 1;
 
   y_stepper.setCurrentPosition(0);  // Set the current position as zero for now
-  y_stepper.setMaxSpeed(maxspeed);      // Set Max Speed of Stepper (Slower to get better accuracy)
-  y_stepper.setAcceleration(maxaccel);  // Set Acceleration of Stepper
+  y_stepper.setMaxSpeed(maxSpeed);      // Set Max Speed of Stepper (Slower to get better accuracy)
+  y_stepper.setAcceleration(maxAccel);  // Set Acceleration of Stepper
   y_initial_homing = 1;
 
 
@@ -68,10 +68,10 @@ void goHome()
   x_stepper.setCurrentPosition(0);
   Serial.println("Homing Completed");
   Serial.println("");
-  x_stepper.setMaxSpeed(maxspeed);      // Set Max Speed of Stepper (Faster for regular movements)
-  x_stepper.setAcceleration(maxaccel);  // Set Acceleration of Stepper
+  x_stepper.setMaxSpeed(maxSpeed);      // Set Max Speed of Stepper (Faster for regular movements)
+  x_stepper.setAcceleration(maxAccel);  // Set Acceleration of Stepper
 
   // Print out Instructions on the Serial Monitor at Start
-  Serial.println("Enter Travel distance (Positive for CW / Negative for CCW and Zero for back to Home): ");
+ // Serial.println("Enter Travel distance (Positive for CW / Negative for CCW and Zero for back to Home): ");
 
 }
