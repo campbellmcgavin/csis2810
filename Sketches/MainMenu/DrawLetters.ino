@@ -186,3 +186,103 @@ void DrawJ(){
     LetterLines(13, 0, false);
   
   }
+
+  void DrawR()
+{
+  LetterLines(1, 21, false);
+  LetterLines(21, 1, true);  
+  LetterLines(1, 4, true);
+  LetterLines(4, 10, true);     
+  LetterLines(10, 15, true);
+  LetterLines(15, 19, true);   
+  LetterLines(19, 16, true);
+  LetterLines(16, 25, true);
+  LetterLines(25, 0, false);
+  
+  origin =  UpdateCoordinates(0);
+}
+
+
+  void DrawS()
+{
+  LetterLines(1, 10, false);
+  LetterLines(10, 4, true);  
+  LetterLines(4, 2, true);
+  LetterLines(2, 6, true);     
+  LetterLines(6, 12, true);
+  LetterLines(12, 14, true);   
+  LetterLines(14, 20, true);
+  LetterLines(20, 24, true);
+  LetterLines(24, 21, true);
+  LetterLines(24, 0, false);
+  
+  origin =  UpdateCoordinates(0);
+}
+
+  void DrawT()
+{
+  LetterLines(1, 5, true);
+  LetterLines(5, 3, false);  
+  LetterLines(3, 23, true);
+  LetterLines(23, 0, false);
+  origin =  UpdateCoordinates(0);
+}
+
+
+  void DrawU()
+{
+  LetterLines(1, 16, true);
+  LetterLines(16, 22, true);  
+  LetterLines(22, 24, true);
+  LetterLines(24, 20, true);
+  LetterLines(20, 5, true);
+  LetterLines(5, 0, false);
+  origin =  UpdateCoordinates(0);
+}
+
+
+  void DrawV()
+{
+  LetterLines(1, 23, true);
+  LetterLines(23, 5, true);  
+  LetterLines(5, 0, false);
+  origin =  UpdateCoordinates(0);
+}
+
+  void DrawW()
+{
+  LetterLines(1, 22, true);
+  LetterLines(22, 13, true);  
+  LetterLines(13, 24, true);
+  LetterLines(24, 5, true);
+  LetterLines(5, 0, false);
+  origin =  UpdateCoordinates(0);
+}
+
+  void DrawX()
+{
+  LetterLines(1, 25, true);
+  LetterLines(25, 21, false);  
+  LetterLines(21, 5, true);
+  LetterLines(5, 0, false);
+  origin =  UpdateCoordinates(0);
+}
+
+  void DrawY()
+{
+  LetterLines(1, 13, true);
+  LetterLines(13, 23, true);  
+  LetterLines(23, 13, false);
+  LetterLines(13, 5, true);
+  LetterLines(5, 0, false);
+  origin =  UpdateCoordinates(0);
+}
+
+  void DrawZ()
+{
+  LetterLines(1, 5, true);
+  LetterLines(5, 21, true);  
+  LetterLines(21, 25, false);
+  LetterLines(25, 0, false);
+  origin =  UpdateCoordinates(0);
+}
