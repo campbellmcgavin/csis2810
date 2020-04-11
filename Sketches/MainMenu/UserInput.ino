@@ -1,17 +1,28 @@
+
 String requestString()
 {
+  String scribeStringScale;
   String scribeString;
-  while (Serial.available()>0)  
-  { 
-    Serial.read();
-  }
-  Serial.print("Enter text to be printed: ");
-  while (Serial.available()==0); // do nothing until you receive input.
-  while (Serial.available()>0)  
-  { // Check if values are available in the Serial Buffer
-  scribeString = Serial.readString();
-  Serial.println(scribeString);
-  }
+//  while (Serial.available()>0)  
+//  { 
+//    Serial.read();
+//  }
+    Serial.print("Enter scale/size: ");
+    while (Serial.available()==0); // do nothing until you receive input.
+    while (Serial.available()>0)  
+    { // Check if values are available in the Serial Buffer
+      s = (Serial.read()-48) * 500;
+      Serial.println(s);
+     
+      sgr = s/1.618;
+    }
+    Serial.print("Enter text to be printed: ");
+    while (Serial.available()==0); // do nothing until you receive input.
+    while (Serial.available()>0)  
+    { // Check if values are available in the Serial Buffer
+      scribeString = Serial.readString();
+      Serial.println(scribeString);
+    }
   return scribeString;  // return variable
 }
 
@@ -41,14 +52,22 @@ Point requestPoint()
 }
 void DrawString(String userInput)
 {
+  
 // #input string
  //# loop through letters function
 //TODO set scale
-  
+  userInput.toUpperCase();
+  Serial.println("Scale: ");
+  Serial.println(s);
+  Serial.println("sgr: ");
+  Serial.println(sgr);
   for(int i = 0; i < userInput.length(); i++)
   {
+    
+    Serial.println(userInput.charAt(i));
     switch(userInput.charAt(i))
     {
+      
       case 'A':
           DrawA();
         break;   
@@ -65,6 +84,7 @@ void DrawString(String userInput)
           DrawE();
         break;
       case 'F':
+      Serial.println("F fired");
           DrawF();
         break;
       case 'G':
@@ -77,56 +97,59 @@ void DrawString(String userInput)
           DrawI();
         break;
       case 'J': 
-//          DrawJ();
-//        break;
-//      case 'K': 
-//          DrawK();
-//        break;
-//      case 'L': 
-//          DrawL();
-//        break;
-//      case 'M': 
-//          DrawM();
-//        break;
-//      case 'N': 
-//          DrawN();
-//        break;
-//      case 'O': 
-//          DrawO();
-//        break;
-//      case 'P': 
-//          DrawP();
-//        break;
-//      case 'Q': 
-//          DrawQ();
-//        break;
-//      case 'R': 
-//          DrawR();
-//        break;
-//      case 'S': 
-//          DrawS();
-//        break;
-//      case 'T': 
-//          DrawT();
-//        break;
-//      case 'U': 
-//          DrawU();
-//        break;
-//      case 'V': 
-//          DrawV();
-//        break;
-//      case 'W':
-//          DrawW();
-//        break;
-//      case 'X':
-//          DrawX();
-//        break;
-//      case 'Y':
-//          DrawY();
-//        break;
-//      case 'Z':
-//          DrawZ();
-//        break;
+          DrawJ();
+        break;
+      case 'K': 
+          DrawK();
+        break;
+      case 'L': 
+          DrawL();
+        break;
+      case 'M': 
+          DrawM();
+        break;
+      case 'N': 
+          DrawN();
+        break;
+      case 'O': 
+          DrawO();
+        break;
+      case 'P': 
+          DrawP();
+        break;
+      case 'Q': 
+          DrawQ();
+        break;
+      case 'R': 
+          DrawR();
+        break;
+      case 'S': 
+          DrawS();
+        break;
+      case 'T': 
+          DrawT();
+        break;
+      case 'U': 
+          DrawU();
+        break;
+      case 'V': 
+          DrawV();
+        break;
+      case 'W':
+          DrawW();
+        break;
+      case 'X':
+          DrawX();
+        break;
+      case 'Y':
+          DrawY();
+        break;
+      case 'Z':
+          DrawZ();
+        break;
+        case ' ':
+          DrawSpace();
+        break;
       default:
         //ERROR
         break;

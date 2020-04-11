@@ -1,8 +1,8 @@
 void DrawA()
 {
   LetterLines(1, 21, false);
-  LetterLines(21, 2, true);  
-  LetterLines(2, 25, true);
+  LetterLines(21, 3, true);  
+  LetterLines(3, 25, true);
   LetterLines(25, 14, true);     
   LetterLines(14, 12, true);
   LetterLines(12, 0, false);   
@@ -64,13 +64,34 @@ void DrawE()
 }
 void DrawF()
 {
+  Serial.println("Draw F");
   LetterLines(1, 21, true);
+  Serial.println("1 21");
+  while(Serial.available() ==0){}
+  Serial.read();
   LetterLines(21, 11, true);  
+  Serial.println("21 11");
+  while(Serial.available() ==0){}
+  Serial.read();
   LetterLines(11, 13, true);
-  LetterLines(13, 11, false);     
+  Serial.println("11 13");
+  while(Serial.available() ==0){}
+  Serial.read();
+  LetterLines(13, 11, false);
+  Serial.println("13 11");  
+  while(Serial.available() ==0){}   
+  Serial.read();
   LetterLines(11, 1, true);
-  LetterLines(1, 5, true);   
+  Serial.println("11 1");
+  Serial.read();
+  while(Serial.available() ==0){}
+  LetterLines(1, 5, true); 
+  Serial.println("1 5");  
+  Serial.read();
+  while(Serial.available() ==0){}
   LetterLines(5, 0, false);
+  Serial.read();
+  Serial.println("5 0");
   origin =  UpdateCoordinates(0);
 }
 void DrawG()
@@ -120,6 +141,8 @@ void DrawJ(){
   LetterLines(23, 21, true);
    LetterLines(21, 16, true);
    LetterLines(16, 0, false);
+
+   origin =  UpdateCoordinates(0);
   }
   void DrawK(){
    LetterLines(1, 21, true);
@@ -127,30 +150,35 @@ void DrawJ(){
    LetterLines(23, 11, true);
    LetterLines(11, 3, true);
    LetterLines(3, 0, false);
+   origin =  UpdateCoordinates(0);
   }
   void DrawL(){
   LetterLines(1, 21, true);
   LetterLines(21, 24, true);
   LetterLines(1, 21, true);
    LetterLines(21, 0, false);
+   origin =  UpdateCoordinates(0);
   }
   void DrawM(){
+    LetterLines(1, 21, false);
     LetterLines(21, 1, true);
     LetterLines(1, 13, true);
     LetterLines(13, 5, true);
     LetterLines(5,25, true);
     LetterLines(25, 0, false);
+    origin =  UpdateCoordinates(0);
   
   }
   void DrawN(){
-
+    LetterLines(1, 21, false);
     LetterLines(21, 1, true);
     LetterLines(1, 25, true);
     LetterLines(25, 5, true);
     LetterLines(5, 0, false);
-  
+  origin =  UpdateCoordinates(0);
   }
   void DrawO(){
+    LetterLines(1, 2, false);
     LetterLines(2, 6, true);
     LetterLines(6, 16, true);
     LetterLines(16, 22, true);
@@ -160,7 +188,7 @@ void DrawJ(){
     LetterLines(10, 4, true);
     LetterLines(4, 2, true);
     LetterLines(2, 0, false);
-  
+  origin =  UpdateCoordinates(0);
   }
   void DrawP(){
     LetterLines(1, 2, true);
@@ -169,8 +197,9 @@ void DrawJ(){
     LetterLines(13, 17, true);
     LetterLines(17, 16, true);
     LetterLines(16, 21, true);
-    LetterLines(21, 0, false);
-  
+    LetterLines(21, 1, true);
+    LetterLines(1, 0, false);
+  origin =  UpdateCoordinates(0);
   }
   void DrawQ(){
     LetterLines(24, 22, true);
@@ -184,7 +213,7 @@ void DrawJ(){
     LetterLines(24, 25, false);
     LetterLines(25, 13, true);
     LetterLines(13, 0, false);
-  
+  origin =  UpdateCoordinates(0);
   }
 
   void DrawR()
@@ -198,7 +227,7 @@ void DrawJ(){
   LetterLines(19, 16, true);
   LetterLines(16, 25, true);
   LetterLines(25, 0, false);
-  
+  origin =  UpdateCoordinates(0);
   origin =  UpdateCoordinates(0);
 }
 
@@ -285,4 +314,9 @@ void DrawJ(){
   LetterLines(21, 25, false);
   LetterLines(25, 0, false);
   origin =  UpdateCoordinates(0);
+}
+void DrawSpace()
+{
+  
+  
 }

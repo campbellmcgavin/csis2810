@@ -24,7 +24,7 @@ long y_initial_homing = -1;
 int y_move_finished = 1; // Used to check if move is completed
 // Printer bed information
 long bedSize = 1500;
-double maxSpeed = 20000.0;
+double maxSpeed = 2000000.0;
 double maxAccel = 10000.0;
 int s = 0;
 int sgr = s/1.618;

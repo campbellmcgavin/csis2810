@@ -3,9 +3,9 @@ void goHome()
   delay(5);  // Wait for EasyDriver wake up
 
 //  Set Max Speed and Acceleration of each Steppers at startup for homing
-  x_stepper.setMaxSpeed(1000.0);      // Set Max Speed of Stepper (Slower to get better accuracy)
+  x_stepper.setMaxSpeed(maxSpeed);      // Set Max Speed of Stepper (Slower to get better accuracy)
   x_stepper.setAcceleration(1000.0);  // Set Acceleration of Stepper
-  y_stepper.setMaxSpeed(1000.0);      // Set Max Speed of Stepper (Slower to get better accuracy)
+  y_stepper.setMaxSpeed(maxSpeed);      // Set Max Speed of Stepper (Slower to get better accuracy)
   y_stepper.setAcceleration(1000.0);  // Set Acceleration of Stepper
   
   // Start Homing procedure of Stepper Motor at startup
