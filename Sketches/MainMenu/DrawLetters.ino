@@ -112,3 +112,77 @@ void DrawI()
 
   origin =  UpdateCoordinates(0);
 }
+
+void DrawJ(){
+  LetterLines(1, 5, true);
+  LetterLines(5, 3, false);
+  LetterLines(3, 23, true);
+  LetterLines(23, 21, true);
+   LetterLines(21, 16, true);
+   LetterLines(16, 0, false);
+  }
+  void DrawK(){
+   LetterLines(1, 21, true);
+   LetterLines(21, 23, false);
+   LetterLines(23, 11, true);
+   LetterLines(11, 3, true);
+   LetterLines(3, 0, false);
+  }
+  void DrawL(){
+  LetterLines(1, 21, true);
+  LetterLines(21, 24, true);
+  LetterLines(1, 21, true);
+   LetterLines(21, 0, false);
+  }
+  void DrawM(){
+    LetterLines(21, 1, true);
+    LetterLines(1, 13, true);
+    LetterLines(13, 5, true);
+    LetterLines(5,25, true);
+    LetterLines(25, 0, false);
+  
+  }
+  void DrawN(){
+
+    LetterLines(21, 1, true);
+    LetterLines(1, 25, true);
+    LetterLines(25, 5, true);
+    LetterLines(5, 0, false);
+  
+  }
+  void DrawO(){
+    LetterLines(2, 6, true);
+    LetterLines(6, 16, true);
+    LetterLines(16, 22, true);
+    LetterLines(22, 24, true);
+    LetterLines(24, 20, true);
+    LetterLines(24, 10, true);
+    LetterLines(10, 4, true);
+    LetterLines(4, 2, true);
+    LetterLines(2, 0, false);
+  
+  }
+  void DrawP(){
+    LetterLines(1, 2, true);
+    LetterLines(2, 8, true);
+    LetterLines(8, 13, true);
+    LetterLines(13, 17, true);
+    LetterLines(17, 16, true);
+    LetterLines(16, 21, true);
+    LetterLines(21, 0, false);
+  
+  }
+  void DrawQ(){
+    LetterLines(24, 22, true);
+    LetterLines(22, 16, true);
+    LetterLines(16, 6, true);
+    LetterLines(6, 2, true);
+    LetterLines(2, 4, true);
+    LetterLines(4, 10, true);
+    LetterLines(10, 20, true);
+    LetterLines(20, 24, true);
+    LetterLines(24, 25, false);
+    LetterLines(25, 13, true);
+    LetterLines(13, 0, false);
+  
+  }
