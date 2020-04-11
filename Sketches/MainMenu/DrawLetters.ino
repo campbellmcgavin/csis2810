@@ -120,6 +120,7 @@ void DrawJ(){
   LetterLines(23, 21, true);
    LetterLines(21, 16, true);
    LetterLines(16, 0, false);
+   origin =  UpdateCoordinates(0);
   }
   void DrawK(){
    LetterLines(1, 21, true);
@@ -127,12 +128,14 @@ void DrawJ(){
    LetterLines(23, 11, true);
    LetterLines(11, 3, true);
    LetterLines(3, 0, false);
+   origin =  UpdateCoordinates(0);
   }
   void DrawL(){
   LetterLines(1, 21, true);
   LetterLines(21, 24, true);
   LetterLines(1, 21, true);
    LetterLines(21, 0, false);
+   origin =  UpdateCoordinates(0);
   }
   void DrawM(){
     LetterLines(21, 1, true);
@@ -140,6 +143,7 @@ void DrawJ(){
     LetterLines(13, 5, true);
     LetterLines(5,25, true);
     LetterLines(25, 0, false);
+    origin =  UpdateCoordinates(0);
   
   }
   void DrawN(){
@@ -148,6 +152,7 @@ void DrawJ(){
     LetterLines(1, 25, true);
     LetterLines(25, 5, true);
     LetterLines(5, 0, false);
+    origin =  UpdateCoordinates(0);
   
   }
   void DrawO(){
@@ -160,6 +165,7 @@ void DrawJ(){
     LetterLines(10, 4, true);
     LetterLines(4, 2, true);
     LetterLines(2, 0, false);
+    origin =  UpdateCoordinates(0);
   
   }
   void DrawP(){
@@ -170,6 +176,7 @@ void DrawJ(){
     LetterLines(17, 16, true);
     LetterLines(16, 21, true);
     LetterLines(21, 0, false);
+    origin =  UpdateCoordinates(0);
   
   }
   void DrawQ(){
@@ -184,6 +191,7 @@ void DrawJ(){
     LetterLines(24, 25, false);
     LetterLines(25, 13, true);
     LetterLines(13, 0, false);
+    origin =  UpdateCoordinates(0);
   
   }
 
