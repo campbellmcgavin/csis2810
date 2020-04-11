@@ -227,7 +227,7 @@ void DrawJ(){
   LetterLines(19, 16, true);
   LetterLines(16, 25, true);
   LetterLines(25, 0, false);
-  origin =  UpdateCoordinates(0);
+
   origin =  UpdateCoordinates(0);
 }
 
