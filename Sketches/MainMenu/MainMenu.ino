@@ -29,34 +29,36 @@ double maxAccel = 10000.0;
 int s = 0;
 int sgr = s/1.618;
 Point origin = Point(0,0);
-Point pointArray[] = {
-   Point (origin.getX() + 1.25 * sgr, origin.getY()),
-   Point (origin.getX() , origin.getY()),
-   Point (origin.getX() + 1/4 * sgr,origin.getY()),
-   Point (origin.getX() + 1/2 * sgr,origin.getY()),
-   Point (origin.getX() + 3/4 * sgr,origin.getY()),
-   Point (origin.getX() + sgr, origin.getY()),
-   Point (origin.getX() , origin.getY() + 1/4 * s),
-   Point (origin.getX() + 1/4 * sgr,origin.getY() + 1/4 * s),
-   Point (origin.getX() + 1/2 * sgr,origin.getY() + 1/4 * s),
-   Point (origin.getX() + 3/4 * sgr,origin.getY() + 1/4 * s),
-   Point (origin.getX() + sgr, origin.getY() + 1/4 * s),
-   Point (origin.getX() , origin.getY() + 1/2 * s),
-   Point (origin.getX() + 1/4 * sgr,origin.getY() + 1/2 * s),
-   Point (origin.getX() + 1/2 * sgr,origin.getY() + 1/2 * s),
-   Point (origin.getX() + sgr, origin.getY() + 1/2 * s),
-   Point (origin.getX() + 3/4 * sgr,origin.getY() + 1/2 * s),
-   Point (origin.getX() , origin.getY() + 3/4 * s),
-   Point (origin.getX() + 1/4 * sgr,origin.getY() + 3/4 * s),
-   Point (origin.getX() + 1/2 * sgr,origin.getY() + 3/4 * s),
-   Point (origin.getX() + 3/4 * sgr,origin.getY() + 3/4 * s),
-   Point (origin.getX() + sgr  ,origin.getY() + 3/4 * s),
-   Point (origin.getX() , origin.getY() + s),
-   Point (origin.getX() + 1/4 * sgr,origin.getY() + s),
-   Point (origin.getX() + 1/2 * sgr,origin.getY() + s),
-   Point (origin.getX() + 3/4 * sgr,origin.getY() + s),
-   Point (origin.getX() + sgr, origin.getY() + s)
-  };
+Point pointA = Point(0,0);
+Point pointB = Point(0,0);
+//Point pointArray[] = {
+//   Point (origin.getX() + 1.25 * sgr, origin.getY()),
+//   Point (origin.getX() , origin.getY()),
+//   Point (origin.getX() + 1/4 * sgr,origin.getY()),
+//   Point (origin.getX() + 1/2 * sgr,origin.getY()),
+//   Point (origin.getX() + 3/4 * sgr,origin.getY()),
+//   Point (origin.getX() + sgr, origin.getY()),
+//   Point (origin.getX() , origin.getY() + 1/4 * s),
+//   Point (origin.getX() + 1/4 * sgr,origin.getY() + 1/4 * s),
+//   Point (origin.getX() + 1/2 * sgr,origin.getY() + 1/4 * s),
+//   Point (origin.getX() + 3/4 * sgr,origin.getY() + 1/4 * s),
+//   Point (origin.getX() + sgr, origin.getY() + 1/4 * s),
+//   Point (origin.getX() , origin.getY() + 1/2 * s),
+//   Point (origin.getX() + 1/4 * sgr,origin.getY() + 1/2 * s),
+//   Point (origin.getX() + 1/2 * sgr,origin.getY() + 1/2 * s),
+//   Point (origin.getX() + sgr, origin.getY() + 1/2 * s),
+//   Point (origin.getX() + 3/4 * sgr,origin.getY() + 1/2 * s),
+//   Point (origin.getX() , origin.getY() + 3/4 * s),
+//   Point (origin.getX() + 1/4 * sgr,origin.getY() + 3/4 * s),
+//   Point (origin.getX() + 1/2 * sgr,origin.getY() + 3/4 * s),
+//   Point (origin.getX() + 3/4 * sgr,origin.getY() + 3/4 * s),
+//   Point (origin.getX() + sgr  ,origin.getY() + 3/4 * s),
+//   Point (origin.getX() , origin.getY() + s),
+//   Point (origin.getX() + 1/4 * sgr,origin.getY() + s),
+//   Point (origin.getX() + 1/2 * sgr,origin.getY() + s),
+//   Point (origin.getX() + 3/4 * sgr,origin.getY() + s),
+//   Point (origin.getX() + sgr, origin.getY() + s)
+//  };
 //Create instances of other classes
 
 

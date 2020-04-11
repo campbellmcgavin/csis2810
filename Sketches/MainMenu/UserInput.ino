@@ -39,55 +39,101 @@ Point requestPoint()
   Point point(x,y);
   return point;  // return variable
 }
-ReadString(String userInput)(
+void DrawString(String userInput)
+{
 // #input string
  //# loop through letters function
-
+//TODO set scale
   
-  for(int i = 0, i < userInput.length, i++)
+  for(int i = 0; i < userInput.length(); i++)
   {
-    switch userInput.charAt[i]:
+    switch(userInput.charAt(i))
+    {
       case 'A':
-        
-      break;   
-      case 'B':break;
-      
-      case 'C':break;
-      case 'D':break;
-      case 'E':break;
-      case 'F':break;
-      case 'G':break;
-      case 'H':break;
-      case 'I':break;
-      case 'J':break;
-      case 'K':break;
-      case 'L':break;
-      case 'M':break;
-      case 'N':break;
-      case 'O':break;
-      case 'P':break;
-      case 'Q':break;
-      case 'R':break;
-      case 'S':break;
-      case 'T':break;
-      case 'U':break;
-      case 'V':break;
-      case 'W':break;
-      case 'X':break;
-      case 'Y':break;
-      case 'Z':
-      
-      break;
+          DrawA();
+        break;   
+      case 'B':
+          DrawB();
+        break;
+      case 'C':
+          DrawC();
+        break;
+      case 'D':
+          DrawD();
+        break;
+      case 'E':
+          DrawE();
+        break;
+      case 'F':
+          DrawF();
+        break;
+      case 'G':
+          DrawG();
+        break;
+      case 'H':
+          DrawH();
+        break;
+      case 'I':
+          DrawI();
+        break;
+      case 'J': 
+//          DrawJ();
+//        break;
+//      case 'K': 
+//          DrawK();
+//        break;
+//      case 'L': 
+//          DrawL();
+//        break;
+//      case 'M': 
+//          DrawM();
+//        break;
+//      case 'N': 
+//          DrawN();
+//        break;
+//      case 'O': 
+//          DrawO();
+//        break;
+//      case 'P': 
+//          DrawP();
+//        break;
+//      case 'Q': 
+//          DrawQ();
+//        break;
+//      case 'R': 
+//          DrawR();
+//        break;
+//      case 'S': 
+//          DrawS();
+//        break;
+//      case 'T': 
+//          DrawT();
+//        break;
+//      case 'U': 
+//          DrawU();
+//        break;
+//      case 'V': 
+//          DrawV();
+//        break;
+//      case 'W':
+//          DrawW();
+//        break;
+//      case 'X':
+//          DrawX();
+//        break;
+//      case 'Y':
+//          DrawY();
+//        break;
+//      case 'Z':
+//          DrawZ();
+//        break;
       default:
         //ERROR
-      return finish
-   }
-{
+        break;
+    }
 
- DrawLetter(UserInput(i)
+  }
 }
-
-
 void MainMenu()
 {
   char command;
@@ -101,13 +147,13 @@ void MainMenu()
   if(command == 's')
   {
     String userInput = requestString(); 
-    ReadString(userInput);
+    DrawString(userInput);
   }
   if(command == 'p') 
   {
     Point p_start(x_stepper.currentPosition(), y_stepper.currentPosition());
     Point p_end = requestPoint();
-    DrawLine(p_start, p_end);
+    DrawLine(p_start, p_end, false);
   }
   if(command == 'h') 
   {

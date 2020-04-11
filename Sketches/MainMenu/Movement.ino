@@ -40,7 +40,26 @@ void printHowFarLeft()
 
 
 //~~~~~~~~~~~~~~~~~~ DRAW FUNCTIONS ~~~~~~~~~~~~~~~~//
+/**
+ * Pretty much DrawLines except takes integers and updates their corresponding Points using our 25 point letter system.
+ */
+void LetterLines(int start, int finish, bool draw)
+{
+  pointA = UpdateCoordinates(start);
+  pointB = UpdateCoordinates(finish);
+  calculateLine(pointA, pointB);
 
+  x_stepper.moveTo(pointB.getX());
+  y_stepper.moveTo(pointB.getY());
+//Serial.print("before while loop: ");
+  int counter = 0;
+  while(!areWeThereYet())
+  {
+    //Serial.print("X, Y: ");
+    MoveMotors();
+    counter = counter+1;
+  }
+}
 void DrawLine(Point start, Point finish, bool draw)
 {
   calculateLine(start, finish);
@@ -58,50 +77,128 @@ void DrawLine(Point start, Point finish, bool draw)
     counter = counter+1;
   }
 }
-
-DrawLetter(char letter, int scale)
-{
-switch letter
-
-  case"A"
-  drawA(scale)
-  case"B"
-  drawB(scale)
-
+/**
+ * Used to update only the points we need rather than having to redo the Point array.
+ * @param point - the desired point to update.
+ * @return the updated Point.
+ */
+Point UpdateCoordinates(int point)
+{ Point updatedPoint = Point(0,0);
+  switch(point)
+  {
+      case 0:
+          updatedPoint = Point(origin.getX() + 1.25 * sgr, origin.getY());
+        break;
+      case 1:
+          updatedPoint = Point(origin.getX() , origin.getY());
+        break; 
+      case 2:
+          updatedPoint = Point(origin.getX() + 1/4 * sgr,origin.getY());
+        break; 
+      case 3:
+          updatedPoint = Point(origin.getX() + 1/2 * sgr,origin.getY());
+        break; 
+      case 4:
+          updatedPoint = Point(origin.getX() + 3/4 * sgr,origin.getY());
+        break; 
+      case 5:
+          updatedPoint = Point(origin.getX() + sgr, origin.getY());
+        break; 
+      case 6:
+          updatedPoint = Point(origin.getX() , origin.getY() + 1/4 * s);
+        break; 
+      case 7:
+          updatedPoint = Point(origin.getX() + 1/4 * sgr,origin.getY() + 1/4 * s);
+        break; 
+      case 8:        
+          updatedPoint = Point(origin.getX() + 1/2 * sgr,origin.getY() + 1/4 * s);
+        break; 
+      case 9:       
+          updatedPoint = Point(origin.getX() + 3/4 * sgr,origin.getY() + 1/4 * s);   
+        break; 
+      case 10:
+          updatedPoint = Point(origin.getX() + sgr, origin.getY() + 1/4 * s);     
+        break; 
+      case 11:
+          updatedPoint = Point(origin.getX() , origin.getY() + 1/2 * s);  
+        break; 
+      case 12:
+          updatedPoint = Point(origin.getX() + 1/4 * sgr,origin.getY() + 1/2 * s);
+        break; 
+      case 13:
+           updatedPoint = Point(origin.getX() + 1/2 * sgr,origin.getY() + 1/2 * s);
+        break; 
+      case 14:
+           updatedPoint = Point(origin.getX() + sgr, origin.getY() + 1/2 * s);
+        break;
+      case 15:
+           updatedPoint = Point(origin.getX() + 3/4 * sgr,origin.getY() + 1/2 * s);
+        break;
+      case 16:
+           updatedPoint = Point(origin.getX() , origin.getY() + 3/4 * s);
+        break;
+      case 17:
+           updatedPoint = Point(origin.getX() + 1/4 * sgr,origin.getY() + 3/4 * s);  
+        break;
+      case 18:
+          updatedPoint = Point(origin.getX() + 1/2 * sgr,origin.getY() + 3/4 * s);
+        break;
+      case 19:
+          updatedPoint = Point(origin.getX() + 3/4 * sgr,origin.getY() + 3/4 * s);
+        break;
+      case 20:
+           updatedPoint = Point(origin.getX() + sgr  ,origin.getY() + 3/4 * s);
+        break;
+      case 21:
+           updatedPoint = Point(origin.getX() , origin.getY() + s);
+        break;
+      case 22:
+           updatedPoint = Point(origin.getX() + 1/4 * sgr,origin.getY() + s);
+        break;
+      case 23:
+           updatedPoint = Point(origin.getX() + 1/2 * sgr,origin.getY() + s);
+        break;
+      case 24:
+           updatedPoint = Point(origin.getX() + 3/4 * sgr,origin.getY() + s);
+        break;
+      case 25:
+           updatedPoint = Point(origin.getX() + sgr, origin.getY() + s);
+        break;
+      default:
+          Serial.print("\nError!: ");
+          Serial.print(point);
+          Serial.print(" is not a valid coordinate.");
+        break;
+  }
+  return updatedPoint;
 }
 
 
-DrawA(int scale)
-{
-  Point start = Point(x.getLocation,y.getLocation)
-  start = GoToPosition(start, scale)
-  start = GoToPosition(3,scale,start)
-}
 
 
 
-Point GoToPosition(Point origin, int finish,int scale)
-{
-    Point start;
-    Point finish;
-    int sgr = s/1.618;
-     
-    switch finishSpot
-    case 1//(x,y)
-       finish = Point(origin.getX(), origin.getY())
-       start = (getCurrentX, getCurrentY());
-       DrawLine(start,finish)
-       
-    case 2//(x + 1/4sgr),y))
-    
-    case 3//(x + 1/2sgr),y))
-    
-    case 4//(x + 3/4sgr),y))
-    
-    case 5//(x + 1sgr),y))
-    
-    return finish
-}
+//Point GoToPosition(Point origin, int finish, int scale)
+//{
+//    Point start = ;
+//    Point finish;
+//    int sgr = s/1.618;
+//     
+//    switch finishSpot
+//    case 1//(x,y)
+//       finish = Point(origin.getX(), origin.getY())
+//       start = (getCurrentX, getCurrentY());
+//       DrawLine(start,finish)
+//       
+//    case 2//(x + 1/4sgr),y))
+//    
+//    case 3//(x + 1/2sgr),y))
+//    
+//    case 4//(x + 3/4sgr),y))
+//    
+//    case 5//(x + 1sgr),y))
+//    
+//    return finish
+//}
 
 
 /*void DrawCircle(Point start, Point finish, bool clockwise, )
