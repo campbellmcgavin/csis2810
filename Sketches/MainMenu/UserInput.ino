@@ -16,6 +16,7 @@ String requestString()
      
       sgr = s/1.618;
     }
+    
     Serial.print("Enter text to be printed: ");
     while (Serial.available()==0); // do nothing until you receive input.
     while (Serial.available()>0)  
@@ -23,20 +24,60 @@ String requestString()
       scribeString = Serial.readString();
       Serial.println(scribeString);
     }
+   
+    
   return scribeString;  // return variable
 }
 
+/**
+ * Store the length of input strings for use in newLine calculations.
+ * 
+ */
+void setPrevStringLength(String input)
+{
+   if(stringAlternator)
+   {
+       inputStringLengthA = input.length();
+   }
+   else
+   {
+     inputStringLengthB = input.length();  
+   }
+   stringAlternator = !stringAlternator;      
+}
+/**
+ * Reads the length of input strings for use in newLine calculations.
+ * 
+ */
+int readPrevStringLength(bool previousString)
+{
+   if(previousString)
+   {
+      if(!stringAlternator)
+        return inputStringLengthA;
+      else
+        return inputStringLengthB;
+   }
+   else
+   {
+     if(stringAlternator)
+        return inputStringLengthA;
+      else
+        return inputStringLengthB;    
+   }  
+}
 Point requestPoint()
 {
   int x;
   int y;
-    while (Serial.available()>0)  
+  while (Serial.available()>0)  
   { 
     Serial.read();
   }
-    Serial.print("Enter an x coordinate: ");
-    while (Serial.available()==0); // do nothing until you receive input.
-    while (Serial.available()>0)  { // Check if values are available in the Serial Buffer
+  Serial.print("Enter an x coordinate: ");
+  while (Serial.available()==0); // do nothing until you receive input.
+  while (Serial.available()>0)  
+  { // Check if values are available in the Serial Buffer
     x = Serial.parseInt();
     Serial.println(x);
   }
@@ -63,11 +104,24 @@ void DrawString(String userInput)
   Serial.println(sgr);
   for(int i = 0; i < userInput.length(); i++)
   {
+    Serial.print("i: ");
+    Serial.println(i);
     
+    Serial.print("char at i: ");
     Serial.println(userInput.charAt(i));
+//    while(Serial.available() ==0){}
+//    Serial.read();
+   
     switch(userInput.charAt(i))
     {
-      
+      case '/':
+        if(userInput.charAt(i+1) == 'N')
+        {
+          i++;
+          DrawNewLine();
+        }
+        else DrawForwardSlash();
+        break;
       case 'A':
           DrawA();
         break;   
@@ -84,7 +138,6 @@ void DrawString(String userInput)
           DrawE();
         break;
       case 'F':
-      Serial.println("F fired");
           DrawF();
         break;
       case 'G':
@@ -147,14 +200,41 @@ void DrawString(String userInput)
       case 'Z':
           DrawZ();
         break;
-        case ' ':
+      case ' ':
           DrawSpace();
+        break;
+      case '1':
+          Draw1();
+        break;
+      case '2':
+          Draw2();
+        break;
+      case '3':
+          Draw3();
+        break;
+      case '4':
+          Draw4();
+        break;
+      case '5':
+          Draw5();
+        break;
+      case '6':
+          Draw6();
+        break;
+      case '7':
+          Draw7();
+        break;
+      case '8':
+          Draw8();
+        break;
+      case '9':
+          Draw9();
         break;
       default:
         //ERROR
         break;
     }
-
+    ZeroOutPosition();
   }
 }
 void MainMenu()
@@ -164,11 +244,13 @@ void MainMenu()
   while (Serial.available()==0); // do nothing until you receive input.
   while (Serial.available()>0)  
   { // Check if values are available in the Serial Buffer
-  command = Serial.read();
+    command = Serial.read();
   }
   Serial.println(command);
   if(command == 's')
   {
+    x_stepper.setCurrentPosition(0);
+    y_stepper.setCurrentPosition(0);
     String userInput = requestString(); 
     DrawString(userInput);
   }
@@ -181,6 +263,31 @@ void MainMenu()
   if(command == 'h') 
   {
     goHome();
+  }
+  if(command == 'x')
+  {
+    x_stepper.move(-4000);
+    while(!xThereYet())
+      x_stepper.run();
+  }
+  if(command == 'w')
+  {
+    x_stepper.move(4000);
+    while(!xThereYet())
+      x_stepper.run();
+  }
+  if(command == 'd')
+  {
+    y_stepper.move(-4000);
+    while(!yThereYet())
+      y_stepper.run();
+       
+  }if(command == 'a')
+  {
+    
+    y_stepper.move(4000);
+    while(!yThereYet())
+      y_stepper.run();
   }
   
 }

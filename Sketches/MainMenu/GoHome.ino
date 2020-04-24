@@ -14,9 +14,9 @@ void goHome()
   Serial.print("Stepper is Homing . . . . . . . . . . . ");
 
   
-  while (digitalRead(x_switch) || digitalRead(y_switch))  
+  while (digitalRead(x_switchHome) || digitalRead(y_switchHome))  
   {  // Make the Stepper move CCW until the switch is activated
-   if(digitalRead(x_switch))
+   if(digitalRead(x_switchHome))
     {
       x_stepper.moveTo(x_initial_homing);  // Set the position to move to
       x_initial_homing--;  // Decrease by 1 for next move if needed
@@ -25,7 +25,7 @@ void goHome()
     }
     
     
-    if(digitalRead(y_switch))
+    if(digitalRead(y_switchHome))
     {
       y_stepper.moveTo(y_initial_homing);  // Set the position to move to
       y_initial_homing--;  // Decrease by 1 for next move if needed
@@ -46,16 +46,16 @@ void goHome()
 
 
 
-  while (!digitalRead(x_switch) || !digitalRead(y_switch)) { // Make the Stepper move CW until the switch is deactivated
+  while (!digitalRead(x_switchHome) || !digitalRead(y_switchHome)) { // Make the Stepper move CW until the switch is deactivated
     
-    if(!digitalRead(x_switch))
+    if(!digitalRead(x_switchHome))
     {
       x_stepper.moveTo(x_initial_homing);
       x_stepper.run();
       x_initial_homing++;
       delay(5);
     }
-    if(!digitalRead(y_switch))
+    if(!digitalRead(y_switchHome))
     {
       y_stepper.moveTo(y_initial_homing);
       y_stepper.run();
